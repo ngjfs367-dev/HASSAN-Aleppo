@@ -1,4 +1,4 @@
-import { Config } from "remotion";
+import { Config } from "@remotion/cli/config";
 
 Config.Rendering.setOverwriteOutput(true);
 Config.Rendering.setCodec("h264");
