@@ -1,0 +1,33 @@
+name: Render Hassan Documentary
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Render MP4
+        run: npm run render
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: hassan-documentary-mp4
+          path: out/hasan_documentary.mp4
+          if-no-files-found: error
