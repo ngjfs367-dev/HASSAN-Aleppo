@@ -1,5 +1,5 @@
 import { Config } from "@remotion/cli/config";
 
-Config.Rendering.setOverwriteOutput(true);
-Config.Rendering.setCodec("h264");
-Config.Rendering.setPixelFormat("yuv420p");
+Config.setOverwriteOutput(true);
+Config.setCodec("h264");
+Config.setPixelFormat("yuv420p");
